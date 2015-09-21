@@ -29,32 +29,72 @@ TEST(RandoTest, allChildrenSmile)
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
 }
 
+// Four is divisible by two
 TEST(RandoTest, fourDivisibleByTwo)
 {
 	Rando rando;
 	ASSERT_TRUE( rando.isDivisbleBy(4,2) );
 }
 
-TEST(RandoTest, threeDivisibleByTwo)
+// Three is not divisible by two
+TEST(RandoTest, threeNotDivisibleByTwo)
 {
 	Rando rando;
 	ASSERT_FALSE( rando.isDivisbleBy(3,2) );
 }
 
+// You can't divide by zero
 TEST(RandoTest, divideByZero)
 {
 	Rando rando;
 	ASSERT_FALSE( rando.isDivisbleBy(3,0) );
 }
 
+// One is closer to zero than four
 TEST(RandoTest, oneIsNearestToZero)
 {
   Rando rando;
 	ASSERT_EQ (1, rando.nearestToZero(1,4));
 }
 
+// Negative one is closer to zero than negative three
 TEST(RandoTest, negativeOneIsNearestToZero)
 {
   Rando rando;
 	ASSERT_EQ (-1, rando.nearestToZero(-3,-1));
+}
+
+// 17 is a prime number
+TEST(RandoTest, seventeenIsPrime)
+{
+  Rando rando;
+	ASSERT_TRUE(rando.isPrime(17));
+}
+
+// One is not a prime number
+TEST(RandoTest, oneIsNotPrime)
+{
+  Rando rando;
+	ASSERT_FALSE(rando.isPrime(1));
+}
+
+// 479 is a prime number
+TEST(RandoTest, 479IsPrime)
+{
+  Rando rando;
+	ASSERT_TRUE(rando.isPrime(479));
+}
+
+// 477 is not a prime number
+TEST(RandoTest, 477IsNotPrime)
+{
+  Rando rando;
+	ASSERT_FALSE(rando.isPrime(477));
+}
+
+// 7919 is a prime number
+TEST(RandoTest, 7919IsPrime)
+{
+  Rando rando;
+	ASSERT_TRUE(rando.isPrime(7919));
 }

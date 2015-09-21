@@ -33,7 +33,23 @@ bool Rando::isDivisbleBy(int first, int second)
 **/
 bool Rando::isPrime(int num)
 {
-	return true;
+  if (num <= 1) return false;
+  
+  if (num <= 3) return true;
+  
+  if (num % 2 == 0) return false;
+  
+  if (num % 3 == 0) return false;
+  
+  int ceiling = ceil(sqrt(num));
+  
+  for (int i = 5; i < ceiling; i += 2){
+    
+    if (num % i == 0) return false;
+    
+  }
+  
+  return true;
 }
 
 /**
