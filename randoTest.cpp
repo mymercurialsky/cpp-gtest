@@ -46,3 +46,15 @@ TEST(RandoTest, divideByZero)
 	Rando rando;
 	ASSERT_FALSE( rando.isDivisbleBy(3,0) );
 }
+
+TEST(RandoTest, oneIsNearestToZero)
+{
+  Rando rando;
+	ASSERT_EQ (1, rando.nearestToZero(1,4));
+}
+
+TEST(RandoTest, negativeOneIsNearestToZero)
+{
+  Rando rando;
+	ASSERT_EQ (-1, rando.nearestToZero(-3,-1));
+}
