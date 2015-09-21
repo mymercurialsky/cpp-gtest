@@ -28,3 +28,21 @@ TEST(RandoTest, allChildrenSmile)
 	Rando rando;
 	ASSERT_TRUE( rando.shouldWorry(true,true,true) );
 }
+
+TEST(RandoTest, fourDivisibleByTwo)
+{
+	Rando rando;
+	ASSERT_TRUE( rando.isDivisbleBy(4,2) );
+}
+
+TEST(RandoTest, threeDivisibleByTwo)
+{
+	Rando rando;
+	ASSERT_FALSE( rando.isDivisbleBy(3,2) );
+}
+
+TEST(RandoTest, divideByZero)
+{
+	Rando rando;
+	ASSERT_FALSE( rando.isDivisbleBy(3,0) );
+}

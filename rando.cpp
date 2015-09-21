@@ -19,7 +19,9 @@ bool Rando::shouldWorry(bool childASmile, bool childBSmile, bool childCSmile)
 **/
 bool Rando::isDivisbleBy(int first, int second)
 {
-	return false;
+  if (second == 0) return false;
+  
+  return first % second == 0;
 }
 
 /**
