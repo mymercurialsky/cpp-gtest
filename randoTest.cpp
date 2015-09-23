@@ -43,12 +43,31 @@ TEST(RandoTest, threeNotDivisibleByTwo)
 	ASSERT_FALSE( rando.isDivisbleBy(3,2) );
 }
 
+// 18 and 3 should pass
+TEST(RandoTest, threeNotDivisibleByEighteen)
+{
+	Rando rando;
+	ASSERT_TRUE( rando.isDivisbleBy(3,18) );
+}
+
 // You can't divide by zero
 TEST(RandoTest, divideByZero)
 {
+  bool exceptionThrown;
+  
 	Rando rando;
+  try
+  {
 	ASSERT_FALSE( rando.isDivisbleBy(3,0) );
+  }
+  catch (int ex){
+    if (ex == -1) exceptionThrown = true;
+  }
+  
+  ASSERT_TRUE(exceptionThrown);
 }
+
+
 
 // One is closer to zero than four
 TEST(RandoTest, oneIsNearestToZero)
