@@ -67,8 +67,6 @@ TEST(RandoTest, divideByZero)
   ASSERT_TRUE(exceptionThrown);
 }
 
-
-
 // One is closer to zero than four
 TEST(RandoTest, oneIsNearestToZero)
 {
@@ -81,6 +79,13 @@ TEST(RandoTest, negativeOneIsNearestToZero)
 {
   Rando rando;
 	ASSERT_EQ (-1, rando.nearestToZero(-3,-1));
+}
+
+// Check what happens if a number is zero
+TEST(RandoTest, zeroCheckNearestToZero)
+{
+  Rando rando;
+	ASSERT_EQ (6, rando.nearestToZero(6,0));
 }
 
 // 17 is a prime number
